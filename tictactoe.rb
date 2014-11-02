@@ -19,20 +19,20 @@ class Board
 	def draw
 		system "clear"
 		puts "     |     |     "
-		puts "  #{self.data[1]}  |  #{self.data[2]}  |  #{self.data[3]} "
+		puts "  #{data[1]}  |  #{data[2]}  |  #{data[3]} "
 		puts "     |     |     "
 		puts "-----+-----+-----"
-		puts "  #{self.data[4]}  |  #{self.data[5]}  |  #{self.data[6]} "
+		puts "  #{data[4]}  |  #{data[5]}  |  #{data[6]} "
 		puts "     |     |     "
 		puts "-----+-----+-----"
 		puts "     |     |     "
-		puts "  #{self.data[7]}  |  #{self.data[8]}  |  #{self.data[9]} "
+		puts "  #{data[7]}  |  #{data[8]}  |  #{data[9]} "
 		puts "     |     |     "
 	end
 
 	# Returns an array of empty positions.
 	def empty_positions
-		self.data.select { |_, square| square.value == " " }.keys
+		data.select { |_, square| square.value == " " }.keys
 	end
 
 	# Returns true if there are no more empty squares
@@ -42,7 +42,7 @@ class Board
 
 	# Given a position and marker, adds the mark to the board.
 	def mark_board(position, marker)
-		self.data[position].mark(marker)
+		data[position].mark(marker)
 	end
 end
 
